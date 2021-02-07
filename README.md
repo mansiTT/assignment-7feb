@@ -79,7 +79,7 @@ Command line ex:
     
  ## Test Service using CURL 
  
- curl --location --request POST 'http://localhost:8080/customer/kyc' \
+ curl --location --request POST 'http://localhost:8080/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "birthDate": "1985-02-08",
