@@ -19,6 +19,7 @@ Command line ex:
     export driverlicenceURL=
     ```
 
+
 ## How to run the service?
 
 1. Clone the repository.
@@ -76,6 +77,13 @@ Command line ex:
     Or, using Yarn
     ```
     yarn start
+    
+ ### Lint Error 
+ 
+   ```
+   npm fix
+   yarn fix
+   ```
     
  ## Test Service using CURL 
  
