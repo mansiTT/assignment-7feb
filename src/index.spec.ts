@@ -129,3 +129,13 @@ describe('Mandatory field validation ', () => {
     );
   });
 });
+
+describe('Perform KYC', () => {
+  it('should successfully perform KYC for valid data ', async () => {
+    const {statusCode, body} = await request(app)
+      .post(baseURL)
+      .send(payload.validKYCRequest);
+    expect(statusCode).toBe(200);
+    // expect(body.data).toHaveProperty('kycResult');
+  });
+});

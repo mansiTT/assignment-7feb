@@ -35,4 +35,13 @@ export const payload = {
     stateOfIssue: 'ABC',
     expiryDate: '2020-02-01',
   },
+  validKYCRequest: {
+    birthDate: '1985-02-08',
+    firstName: 'James',
+    middleName: 'Robert',
+    lastName: 'Smith',
+    licenceNumber: '94977000',
+    stateOfIssue: 'NSW',
+    expiryDate: '2020-01-01',
+  },
 };

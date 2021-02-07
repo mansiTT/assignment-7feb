@@ -1,11 +1,12 @@
 'use strict';
 
-class VerifyDocumentError extends Error {
-  public code: string;
+import HttpException from './http.exception';
+
+class VerifyDocumentError extends HttpException {
   public message: string;
-  constructor(message: string, code: string) {
-    super(message);
-    this.code = code;
+  constructor(message: string, code?: number) {
+    super(message, code ? code : 500, {});
+    this.code = code ? code : 500;
     this.message = message;
   }
 }

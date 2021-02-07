@@ -36,7 +36,7 @@ export class UserKycRequest {
   lastName: string;
 
   @IsString()
-  licenseNumber: string;
+  licenceNumber: string;
 
   @IsDateString()
   expiryDate: string;
