@@ -76,3 +76,19 @@ Command line ex:
     Or, using Yarn
     ```
     yarn start
+    
+ ## Test Service using CURL 
+ 
+ curl --location --request POST 'http://localhost:8080/customer/kyc' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "birthDate": "1985-02-08",
+    "firstName": "James",
+    "middleName": "Robert",
+    "lastName": "Smith",
+    "licenceNumber": "94977000",
+    "stateOfIssue": "NSW",
+    "expiryDate": "2020-01-01"
+}'
+    
+    
