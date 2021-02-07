@@ -3,9 +3,21 @@ upstreet assignment
 
 ## Enviornment Variables 
 
-logLevel=
+Provide following attirbutes as runtime process.env
+
 secret=
+
 driverlicenceURL=
+
+Command line ex: 
+
+    ```
+    export secret=
+    ```
+    
+    ```
+    export driverlicenceURL=
+    ```
 
 ## How to run the service?
 
