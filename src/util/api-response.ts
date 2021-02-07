@@ -16,6 +16,7 @@ export default class APIResponse {
       errorStatus: this.isError,
       message: this.customMsg,
       code: this.code,
+      data: this.data ? this.data : [],
     };
   }
 }

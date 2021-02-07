@@ -1,6 +1,5 @@
 'use strict';
 
 export class UserKycResponse {
-
-    kycResult: boolean;
+  kycResult: boolean;
 }
