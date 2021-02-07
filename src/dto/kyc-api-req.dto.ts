@@ -1,4 +1,7 @@
-'use strict';
+'use strict'
+/**
+ * Third party api request dto
+*/
 
 import {StateOfIssue} from '../enum/state-of-issue.enum';
 

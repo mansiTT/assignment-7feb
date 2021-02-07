@@ -33,7 +33,7 @@ export const doKYC: HttpFunction = async (req, res) => {
         ).generateBody()
       );
   } catch (err) {
-    console.log('Error==============', err);
+    logger.error('Error while performing kyc ', err);
     const errDtls = errorHandler(err);
     res.status(err.code ? err.code : 500).send(errDtls);
   }

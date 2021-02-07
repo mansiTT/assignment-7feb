@@ -1,2 +1,66 @@
 # assignment-7feb
 upstreet assignment
+
+## Enviornment Variables 
+
+logLevel=
+secret=
+driverlicenceURL=
+
+## How to run the service?
+
+1. Clone the repository.
+    ```
+    https://github.com/mansiTT/assignment-7feb.git
+    ```
+
+2. Install Dependencies. 
+
+    Using NPM
+    ```
+    npm install
+    ```
+
+    Or, using Yarn
+    ```
+    yarn
+    ```
+3. Run Test Cases 
+   
+    Using NPM
+    ```
+    npm test
+    ```
+    Or, using Yarn
+    ```
+    yarn test
+    ```
+
+4. Run Service  
+
+    clean & build  
+
+    Using NPM
+    ```
+    npm clean
+    ```
+    ```
+    npm compile
+    ```
+    Or, using Yarn
+    ```
+    yarn clean
+    ```
+    ```
+    yarn compile
+    ```
+    
+    Start 
+
+    Using NPM
+    ```
+    npm start
+    ```
+    Or, using Yarn
+    ```
+    yarn start

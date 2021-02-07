@@ -2,6 +2,7 @@
 
 import HttpException from './http.exception';
 
+// Custom Exception handler for error response from third party api service
 class VerifyDocumentError extends HttpException {
   public message: string;
   constructor(message: string, code?: number) {

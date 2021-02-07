@@ -9,27 +9,33 @@ import {msgCons} from './util/constants/msg.constant';
 
 /**
  * Perform kyc verification with third party
- * @param userKycDto
+ * @param userKycDto:UserKycRequest
+ * @returns userKycResponse: UserKycResponse
  */
 export async function performThirdPartyKYCVerifcation(
   userKycDto: UserKycRequest
 ): Promise<UserKycResponse> {
   logger.trace('Entered into doKYC');
+  // 
   const header = {
     headers: {
       Authorization: `Bearer ${process.env.secret}`,
     },
   };
   const url = `${process.env.driverlicenceURL}`;
+  // Make a call to third party api for kyc verification
   const response = await callPostWS(
     url,
     header,
     kycAPIRequestBuilder(userKycDto)
   );
+  logger.debug('raw response from third party api', response);
+  logger.trace('Exit :: performThirdPartyKYCVerifcation');
   return kycAPIResponseBuilder(response);
 }
 
 function kycAPIRequestBuilder(userKycDto: UserKycRequest): KYCAPIRequest {
+  logger.trace('Enter :: kycAPIRequestBuilder');
   const kycAPIReq = new KYCAPIRequest();
   kycAPIReq.birthDate = userKycDto.birthDate;
   kycAPIReq.givenName = userKycDto.firstName;
@@ -38,10 +44,13 @@ function kycAPIRequestBuilder(userKycDto: UserKycRequest): KYCAPIRequest {
   kycAPIReq.licenceNumber = userKycDto.licenceNumber;
   kycAPIReq.expiryDate = userKycDto.expiryDate;
   kycAPIReq.stateOfIssue = userKycDto.stateOfIssue;
+  logger.debug("formatted api request = ",kycAPIReq)
+  logger.trace('Exit :: kycAPIRequestBuilder');
   return kycAPIReq;
 }
 
 function kycAPIResponseBuilder(response: KYCAPIResponse): UserKycResponse {
+  logger.trace('Enter :: kycAPIResponseBuilder');
   const userResponse = new UserKycResponse();
   switch (response.verificationResultCode) {
     case 'Y':
@@ -56,5 +65,7 @@ function kycAPIResponseBuilder(response: KYCAPIResponse): UserKycResponse {
       throw new VerifyDocumentError(msgCons.MSG_SERVER_ERROR);
     default:
   }
+  logger.debug("formatted api responnse = ",userResponse)
+  logger.trace('Exit :: kycAPIResponseBuilder');
   return userResponse;
 }
