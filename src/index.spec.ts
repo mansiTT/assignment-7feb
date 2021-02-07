@@ -16,7 +16,6 @@ describe('Perform KYC', () => {
     const {statusCode, body} = await request(app)
       .post(baseURL)
       .send(payload.validKYCRequest);
-    console.log('body', body);
     expect(statusCode).toBe(200);
     // expect(body.data).toHaveProperty('kycResult');
   });

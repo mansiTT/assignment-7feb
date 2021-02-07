@@ -11,10 +11,9 @@ import {
 import {msgCons} from '../util/constants/msg.constant';
 import {StateOfIssue} from '../enum/state-of-issue.enum';
 
-
 /**
  * Function's request dto for request with all validations
-*/
+ */
 export class UserKycRequest {
   @IsDateString()
   birthDate: Date;

@@ -16,7 +16,7 @@ export async function performThirdPartyKYCVerifcation(
   userKycDto: UserKycRequest
 ): Promise<UserKycResponse> {
   logger.trace('Entered into doKYC');
-  // 
+  //
   const header = {
     headers: {
       Authorization: `Bearer ${process.env.secret}`,
@@ -44,7 +44,7 @@ function kycAPIRequestBuilder(userKycDto: UserKycRequest): KYCAPIRequest {
   kycAPIReq.licenceNumber = userKycDto.licenceNumber;
   kycAPIReq.expiryDate = userKycDto.expiryDate;
   kycAPIReq.stateOfIssue = userKycDto.stateOfIssue;
-  logger.debug("formatted api request = ",kycAPIReq)
+  logger.debug('formatted api request = ', kycAPIReq);
   logger.trace('Exit :: kycAPIRequestBuilder');
   return kycAPIReq;
 }
@@ -65,7 +65,7 @@ function kycAPIResponseBuilder(response: KYCAPIResponse): UserKycResponse {
       throw new VerifyDocumentError(msgCons.MSG_SERVER_ERROR);
     default:
   }
-  logger.debug("formatted api responnse = ",userResponse)
+  logger.debug('formatted api responnse = ', userResponse);
   logger.trace('Exit :: kycAPIResponseBuilder');
   return userResponse;
 }

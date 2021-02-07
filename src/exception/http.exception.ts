@@ -1,6 +1,6 @@
 'use strict';
 
-// Custom HTTP Exception handler 
+// Custom HTTP Exception handler
 class HttpException extends Error {
   public message: string;
   public code: number;
