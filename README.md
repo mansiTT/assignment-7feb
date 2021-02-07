@@ -91,4 +91,36 @@ Command line ex:
     "expiryDate": "2020-01-01"
 }'
     
-    
+Response : 
+
+```
+{
+    "errorStatus": false,
+    "message": "Success",
+    "code": "Successfully completed kyc for customer!!",
+    "data": {
+        "kycResult": false
+    }
+}
+```
+
+Server Error
+```
+{
+    "errorStatus": true,
+    "message": "Server Error",
+    "code": "500",
+    "data": {}
+}
+```
+
+Document Error 
+
+```
+{
+    "errorStatus": true,
+    "message": "Document Error",
+    "code": "500",
+    "data": {}
+}
+```
