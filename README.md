@@ -1,5 +1,4 @@
-# assignment-7feb
-upstreet assignment
+# GCP Functions
 
 ## Enviornment Variables 
 
