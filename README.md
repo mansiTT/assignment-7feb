@@ -23,7 +23,6 @@ Command line ex:
 
 1. Clone the repository.
     ```
-    https://github.com/mansiTT/assignment-7feb.git
     ```
 
 2. Install Dependencies. 
